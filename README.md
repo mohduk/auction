@@ -1,4 +1,4 @@
-# auction
+# Auction
 
 Objective 
 
