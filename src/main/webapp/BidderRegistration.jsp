@@ -8,10 +8,11 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="Style.css">
 </head>
-
+                     
 <body class="body">
-<h2>Registration</h2>
+
 <div class="center">
+<h2>Registration</h2>
 <form  action="RegistrationServlet" method="get">
 <label>Name:</label><br>
 <input  type="text" name="name" placeholder="name "><br>
