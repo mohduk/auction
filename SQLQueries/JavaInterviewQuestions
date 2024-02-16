@@ -1,0 +1,200 @@
+1. What is the difference between HashMap and Hashtable in Java?
+Answer: HashMap is not synchronized and not thread-safe, while Hashtable is synchronized and thread-safe.
+2. Explain the concept of Java Generics?
+Answer: Generics allow you to create classes, interfaces, and methods that operate with types as parameters, providing type safety and reusability.
+3. What is the Java Memory Model (JMM), and why is it important?
+Answer: JMM defines how threads in Java interact with memory, ensuring proper visibility of shared data and preventing data races.
+4. What is the purpose of the volatile keyword in Java?
+Answer: volatile is used to indicate that a variable's value may be changed by multiple threads simultaneously and ensures visibility of changes.
+5. What are lambda expressions in Java, and how are they used?
+Answer: Lambda expressions provide a concise way to define anonymous functions and are used mainly for functional programming and the Stream API.
+6. What is the difference between composition and inheritance in Java?
+Answer: Composition is a design principle where one class contains an instance of another class, while inheritance is an "is-a" relationship between classes.
+7. What is the Java Collections Framework, and why is it important?
+Answer: The Collections Framework provides classes and interfaces for working with collections of objects, offering reusable data structures and algorithms.
+8. What is the purpose of the transient keyword in Java?
+Answer: transient is used to mark a field as non-serializable, preventing it from being included in the object's serialized form.
+9. What is the difference between wait() and sleep() methods in Java?
+Answer: wait() is a method for threads to wait for a condition to be met and releases the monitor, while sleep() simply pauses a thread for a specified time.
+10. Explain the concept of garbage collection in Java?
+Answer: Garbage collection is the process of automatically reclaiming memory occupied by objects no longer in use, helping manage memory efficiently.
+11. What is a Java annotation, and how are they used?
+Answer: Annotations provide metadata about code elements and are used for various purposes like code documentation and runtime processing.
+12. What is the try-with-resources statement in Java, and how does it work?
+Answer: try-with-resources is used for automatic resource management, ensuring that resources like files or sockets are properly closed after use.
+13. What is the Java Native Interface (JNI), and when is it used?
+Answer: JNI allows Java code to interact with native libraries and is used when you need to access platform-specific or low-level features.
+14. Explain the concept of multithreading in Java?
+Answer: Multithreading allows concurrent execution of multiple threads, enabling efficient utilization of CPU resources and responsiveness in applications.
+15. What is the purpose of the assert statement in Java?
+Answer: assert is used for debugging purposes to check certain conditions during development and can be enabled or disabled at runtime.
+16. How does the Java Virtual Machine (JVM) handle method overloading & overriding?
+Answer: Method overloading is resolved at compile-time based on the method signature, while method overriding is resolved at runtime using dynamic dispatch.
+17. What is the difference between StringBuilder and StringBuffer?
+Answer: Both classes provide mutable strings, but StringBuffer is thread-safe, while StringBuilder is not.
+18. Explain the concept of design patterns in Java?
+Answer: Design patterns are recurring solutions to common design problems, promoting code reusability, maintainability, and scalability.
+19. What is reflection in Java, and how is it used?
+Answer: Reflection allows Java code to inspect and manipulate class objects, fields, methods, and constructors at runtime.
+20. Describe the principles of object-oriented programming (OOP) and their application in Java.
+Answer: OOP principles include encapsulation, inheritance, polymorphism, and abstraction, which are fundamental concepts in Java for building modular and extensible code.
+21. What is the purpose of the finalize() method in Java, and when is it called?
+Answer: The finalize() method is used for cleanup operations on an object before it's garbage collected. It's called by the garbage collector before reclaiming the memory.
+22. Explain the concept of checked and unchecked exceptions in Java? 
+Answer: Checked exceptions are those that must be either caught using try-catch or declared using throws in a method's signature. Unchecked exceptions are subclasses of RuntimeException and don't require explicit handling.
+23. What is the difference between deep copy and shallow copy of objects in Java?
+Answer: A deep copy creates a new object and recursively copies all objects referenced by the original object, while a shallow copy creates a new object and copies references to the objects referenced by the original.
+24. How does Java support multiple inheritance through interfaces?
+Answer: Java supports multiple inheritance of types (interfaces) but not implementation. A class can implement multiple interfaces to inherit their abstract methods.
+25. What is the purpose of the ClassLoader in Java, and how does it work?
+Answer: The ClassLoader is responsible for loading classes into memory at runtime. It follows a hierarchical structure and can load classes from various sources like the file system or network.
+26. What are inner classes in Java, and why are they used?
+Answer: Inner classes are classes defined within another class. They are used for encapsulation, organization, and accessing outer class members, often in a more readable and concise way.
+27. Explain the super keyword in Java and its use in constructor chaining?
+Answer: super is used to call a superclass's constructor or access superclass members. It's commonly used in constructor chaining to call the superclass constructor from a subclass constructor.
+28. What is method overloading, and how is it different from method overriding in Java?
+Answer: Method overloading is the process of defining multiple methods with the same name in a class, differing by the number or type of parameters. It's resolved at compile-time. Method overriding is the process of providing a specific implementation of a superclass's method in a subclass, resolved at runtime.
+29. What is a Java Servlet, and how does it differ from a JSP (JavaServer Pages)?
+Answer: A Java Servlet is a Java class used to handle HTTP requests and generate dynamic web content. JSP is a technology used for creating web pages with embedded Java code. Servlets are more suited for handling logic, while JSP is used for rendering HTML.
+30. What is the purpose of the Enum type in Java, and how is it different from regular classes?
+Answer: Enum types are used to define a fixed set of constants. They are implicitly final, cannot be extended, and are often used for representing things like days of the week or status codes.
+31. How does Java handle exceptions in a multi-threaded environment?
+Answer: Each thread has its own call stack and exception handlers. If an exception is not caught within a thread, it propagates up the call stack of that thread only.
+32. Explain the concept of the "diamond problem" in the context of multiple inheritance in Java?
+Answer: The diamond problem occurs when a class inherits from two classes that have a common ancestor. It can lead to ambiguity in method calls, and Java solves this by requiring explicit method override or the use of default methods in interfaces.
+33. What is the purpose of the synchronized keyword in Java, and how does it work?
+Answer: synchronized is used to create synchronized blocks or methods to provide thread-safety by allowing only one thread to access a synchronized block at a time.
+34. What is the difference between ClassLoader.loadClass() and Class.forName() methods in Java for loading classes?
+Answer: ClassLoader.loadClass() loads a class but doesn't initialize it, while Class.forName() loads and initializes a class. Class.forName() is also used for dynamically loading classes based on a string name.
+35. Explain the concept of object serialization in Java?
+Answer: Object serialization is the process of converting an object's state into a byte stream for storage or transmission. It allows objects to be saved to files or sent over the network.
+36. What is the purpose of the this keyword in Java, and how is it used?
+Answer: The this keyword refers to the current instance of a class and is often used to distinguish between instance variables and method parameters with the same name.
+37. Explain the principles of immutability and how they relate to Java's final keyword?
+Answer: Immutability refers to the inability of an object to change its state after creation. The final keyword can be applied to classes, methods, or fields to indicate that they cannot be modified.
+38. What is the Comparator interface in Java, and how is it used for custom sorting of objects?
+Answer: Comparator is used for custom sorting of objects. It defines methods to compare objects based on specific criteria, allowing you to sort objects in a way that's different from their natural ordering.
+39. Explain the difference between the equals() method and the == operator in Java for comparing objects?
+Answer: The equals() method is used to compare the content or values of objects, while == compares object references, checking if they refer to the same memory location.
+40. What is the purpose of the @Override annotation in Java, and when should it be used?
+Answer: @Override is used to indicate that a method in a subclass is intended to override a method in the superclass. It helps catch errors at compile-time if there's a mismatch in method signatures.
+41. Explain the concept of inner and anonymous classes in Java?
+Answer: Inner classes are classes defined within other classes, while anonymous classes are inner classes without a specified name. Anonymous classes are often used for one-time usage.
+42. What is the Java Module System introduced in Java 9, and how does it help with modularity?
+Answer: The Java Module System allows you to create modular applications by encapsulating code into distinct modules, improving code organization and reducing dependencies.
+43. How does Java support primitive data types and their corresponding wrapper classes?
+Answer: Java provides wrapper classes (e.g., Integer, Double) for primitive data types (e.g., int, double) to allow them to be used as objects and provide additional methods and functionality.
+44. What is the purpose of the Class class in Java, and how can it be used to inspect class metadata at runtime?
+Answer: The Class class represents class metadata at runtime and can be used to inspect class information, such as methods, fields, and annotations.
+45. Explain the concept of dynamic method dispatch and its role in method overriding in Java?
+Answer: Dynamic method dispatch allows the JVM to determine the appropriate method to call at runtime when a method is overridden in a subclass. It enables polymorphic behavior.
+46. What is the purpose of the ThreadLocal class in Java, and how is it used for managing thread-local variables?
+Answer: ThreadLocal allows you to create variables that are local to each thread, ensuring thread safety without synchronization. Each thread accesses its own copy of the variable.
+47. Describe the Java 8 features related to functional programming, including lambdas and the Stream API?
+Answer: Java 8 introduced lambdas for defining functions, and the Stream API for working with collections in a functional style, enabling concise and expressive code.
+48. What is a Java annotation processor, and how can it be used for code generation or validation?
+Answer: An annotation processor processes annotations at compile-time, allowing you to generate code, perform validations, or automate tasks based on annotations in your code.
+49. Explain the principles of method chaining and builder design pattern in Java, and their benefits?
+Answer: Method chaining allows multiple method calls on an object in a single line, enhancing readability. The builder design pattern simplifies object creation by chaining builder methods.
+50. How does Java handle memory management and garbage collection for objects with circular references?
+Answer: Java's garbage collector can handle circular references by using techniques like reference counting or reachability analysis to identify and reclaim unreferenced objects.
+51. What is the purpose of the volatile keyword in Java, and how does it ensure visibility and ordering of variables among threads?
+Answer: volatile ensures that the value of a variable is always read from and written to main memory, preventing thread-local caching and ensuring visibility and ordering of reads and writes among threads.
+52. Explain the concept of the "fork-join" framework in Java and its use in parallel programming?
+Answer: The fork-join framework is used for parallelism in Java to divide a task into smaller subtasks that can be executed concurrently. It's particularly useful for CPU-bound tasks.
+53. What are the differences between the throw and throws keywords in Java, and when are they used?
+Answer: throw is used to manually throw an exception, while throws is used in a method signature to indicate that the method can throw checked exceptions that need to be handled by the caller or propagated.
+54. Explain the concept of JavaBeans and the conventions associated with them?
+Answer: JavaBeans are reusable software components in Java. They follow conventions like having a public no-argument constructor, providing getter and setter methods, and being serializable.
+55. What is the purpose of the System class in Java, and how is it used for input/output operations and system properties?
+Answer: The System class provides access to the system's standard input, output, and error streams, as well as system properties and environment variables.
+56. Describe the concept of "checked exceptions" and "unchecked exceptions" in Java and provide examples of each?
+Answer: Checked exceptions are exceptions that must be caught or declared, such as IOException. Unchecked exceptions are subclasses of RuntimeException, such as NullPointerException, and don't require explicit handling.
+57. What is the purpose of the java.util.concurrent package in Java, and how does it facilitate concurrent programming?
+Answer: The java.util.concurrent package provides classes and utilities for concurrent programming, including thread pools, locks, and concurrent data structures.
+58. Explain the concept of method references in Java, and how are they used as a shorthand for lambda expressions?
+Answer: Method references provide a concise way to refer to methods or constructors using their names. They can be used as a shorthand for lambda expressions when the lambda's body simply calls a method.
+59. What is the purpose of the AutoCloseable interface in Java, and how is it used for resource management with the try-with-resources statement?
+Answer: The AutoCloseable interface is used for classes that manage resources that need to be closed after use. It enables automatic resource management when used with the try-with-resources statement.
+60. Explain the role of the java.lang.ClassLoader class in dynamic class loading and runtime class generation in Java?
+Answer: The ClassLoader class loads classes into memory at runtime and can be used for dynamic class loading, which is useful for plugins and runtime class generation.
+61. What are annotations, and how can custom annotations be defined and used in Java?
+Answer: Annotations are metadata that can be added to code elements like classes, methods, or fields. Custom annotations can be defined using the @interface keyword and used to provide additional information or behavior.
+62. Describe the purpose of the java.nio package and its role in high-performance I/O operations in Java?
+Answer: The java.nio package provides non-blocking I/O operations and memory-mapped file capabilities, enabling high-performance I/O operations in Java.
+63. What are the principles of the SOLID design principles in object-oriented programming, and how do they apply to Java development?
+Answer: SOLID stands for Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle. These principles guide software design and promote maintainable and extensible code in Java.
+64. Explain the concept of reflection in Java, and provide examples of how it can be used to inspect or manipulate class metadata at runtime?
+Answer: Reflection allows you to inspect and manipulate class metadata, such as fields, methods, and constructors, at runtime. It's often used in frameworks and tools for dynamic behavior.
+65. What is a Java agent, and how can it be used for instrumenting bytecode or enhancing the behavior of Java applications at runtime?
+Answer: A Java agent is a program that can be attached to a Java application at runtime to monitor, instrument, or enhance its behavior. It's commonly used for profiling and debugging.
+66. What is the purpose of the java.util.stream package in Java, and how does it support functional-style operations on collections?
+Answer: The java.util.stream package provides a powerful API for functional-style operations on collections, including filtering, mapping, and reducing, making it easier to work with data in a declarative manner.
+67. Explain the concept of serialization and deserialization in Java, and discuss the role of the Serializable interface?
+Answer: Serialization is the process of converting an object into a byte stream for storage or transmission, while deserialization is the reverse process. The Serializable interface is used to mark classes as serializable, allowing their objects to be serialized.
+68. What is the java.util.function package in Java, and how does it provide functional interfaces for use with lambda expressions and method references?
+Answer: The java.util.function package defines functional interfaces like Consumer, Function, and Predicate, which can be used as argument types for lambda expressions and method references, promoting functional programming in Java.
+69. Explain the concept of classpath and class loading in Java, and how class loading is performed at runtime?
+Answer: The classpath is a list of directories and JAR files where the JVM looks for class files. Class loading is the process of loading classes into memory when they are first referenced, following a hierarchical class loading mechanism.
+70. What is the java.util.concurrent.atomic package, and how does it provide atomic operations for variables in a multithreaded environment?
+Answer: The java.util.concurrent.atomic package provides classes like AtomicInteger and AtomicReference that offer atomic operations, ensuring thread safety without the need for explicit synchronization.
+71. Explain the purpose of the java.util.concurrent.locks package in Java and the differences between ReentrantLock and synchronized blocks/methods?
+Answer: The java.util.concurrent.locks package provides advanced locking mechanisms for managing concurrency. ReentrantLock offers more control than synchronized blocks/methods and supports features like fairness.
+72. What is the purpose of the Java Authentication and Authorization Service (JAAS), and how is it used for user authentication and access control?
+Answer: JAAS is a Java framework for user authentication and authorization. It provides a way to secure Java applications by defining and enforcing security policies.
+73. Explain the concept of Java RMI (Remote Method Invocation) and how it enables distributed computing and remote object communication?
+Answer: Java RMI allows objects to invoke methods on remote objects in a distributed system. It enables communication between Java objects running on different JVMs, making distributed computing possible.
+74. What are the benefits and drawbacks of using immutable objects in Java, and how can they improve code quality and thread safety?
+Answer: Immutable objects provide thread safety and are inherently thread-safe. They also simplify code by eliminating mutable state. However, they can be less efficient if frequent modifications are required.
+75. Explain the concept of method handle in Java and how it differs from traditional method invocations using reflection or lambda expressions?
+Answer: Method handles provide a way to refer to methods and perform method invocations in a more efficient and flexible manner than traditional reflection or lambda expressions.
+76. What is the Java Security Manager, and how does it control the execution of untrusted code in Java applications?
+Answer: The Java Security Manager is a component that controls the execution of untrusted code by specifying security policies and granting or denying permissions to Java code.
+77. Describe the principles of code design for testability in Java and how they promote the development of testable and maintainable code?
+Answer: Principles like Dependency Injection, Separation of Concerns, and Single Responsibility Principle promote code design that is easy to test and maintain in Java.
+78. Explain the concept of Java Flight Recorder (JFR) and how it can be used for profiling and monitoring Java applications in real-time?
+Answer: JFR is a built-in profiling and monitoring tool in Java that collects detailed runtime information about an application's performance, helping developers identify bottlenecks and issues.
+79. What is the Java Memory Model (JMM), and how does it ensure memory consistency and visibility in multi-threaded programs?
+Answer: The JMM defines rules for how threads interact with memory, ensuring memory consistency and visibility in multi-threaded programs by defining happens-before relationships.
+80. Explain the role of the java.nio.channels package in Java for non-blocking I/O operations and asynchronous communication?
+Answer: The java.nio.channels package provides support for non-blocking I/O operations and asynchronous communication, allowing Java applications to handle I/O efficiently without blocking threads.
+81. What is the purpose of the java.util.concurrent package in Java, and how does it provide high-level concurrency abstractions and utilities for multi-threading?
+Answer: The java.util.concurrent package provides high-level concurrency abstractions and utilities, including thread pools, concurrent data structures, and synchronization mechanisms, to simplify multi-threaded programming.
+82. Explain the concept of the Java Native Interface (JNI) and its use for integrating Java code with native code written in languages like C or C++?
+Answer: JNI allows Java code to call native code and vice versa. It enables the integration of Java applications with native libraries for tasks that require platform-specific functionality.
+83. What is the purpose of the java.util.function package in Java, and how does it facilitate functional programming constructs like predicates, consumers, and functions?
+Answer: The java.util.function package provides functional interfaces like Predicate, Consumer, and Function to work with functional programming constructs, enabling concise and expressive code.
+84. Explain the concept of Java records introduced in Java 16, and how they simplify the creation of data classes?
+Answer: Java records are a new language feature that simplifies the creation of data classes by automatically generating constructors, accessors, equals(), hashCode(), and toString() methods based on the class's components.
+85. What is the Java Content Repository (JCR) specification, and how is it used for managing content in Java-based applications?
+Answer: The JCR specification defines a standard API for content management in Java applications, allowing developers to work with structured content like documents, images, and metadata.
+86. Explain the concept of method references in Java and provide examples of how they can be used to simplify code when passing methods as arguments or using lambda expressions?
+Answer: Method references provide a shorthand notation to refer to methods as arguments to functions. They simplify code when working with functional interfaces and lambda expressions.
+87. Describe the principles of the "Single Responsibility Principle" (SRP) and how it applies to class design in Java, promoting cohesion and maintainability?
+Answer: SRP suggests that a class should have only one reason to change, meaning it should have a single responsibility. It promotes cohesion by keeping related functionality together and enhances maintainability.
+88. What is the java.lang.instrument package in Java, and how is it used for bytecode manipulation and dynamic code modification at runtime?
+Answer: The java.lang.instrument package provides a way to modify Java bytecode at runtime, enabling dynamic code modification, profiling, and instrumentation.
+89. Explain the role of the java.util.ServiceLoader class in Java and how it enables dynamic service discovery and loading in applications?
+Answer: The ServiceLoader class is used for dynamic service discovery and loading in Java applications. It allows you to discover and instantiate services from various providers at runtime.
+90. What is the purpose of the java.lang.ref package in Java, and how does it provide different levels of reference types for managing memory and object lifecycles?
+Answer: The java.lang.ref package provides reference types (strong, soft, weak, and phantom) for managing memory and object lifecycles. These reference types allow more control over object garbage collection.
+91. Explain the concept of "garbage-first" (G1) garbage collection in Java and how it differs from other garbage collection algorithms like the generational collector?
+Answer: G1 is a garbage collection algorithm that aims to provide high throughput and low latency by dividing the heap into regions and collecting regions with the most garbage. It differs from the generational collector in its approach to managing the heap.
+92. What is the java.util.concurrent.CompletableFuture class in Java, and how is it used for asynchronous and non-blocking programming, including chaining and combining asynchronous tasks?
+Answer: CompletableFuture is a class in Java that represents a future result of an asynchronous computation. It allows for chaining and combining multiple asynchronous tasks and simplifies non-blocking programming.
+93. Explain the concept of the "Open/Closed Principle" (OCP) in object-oriented design and how it encourages extensibility while preserving existing code?
+Answer: OCP suggests that software entities should be open for extension but closed for modification. It encourages extensibility through inheritance, interfaces, and design patterns like the Strategy pattern.
+94. Describe the concept of "checked exceptions" and "unchecked exceptions" in Java, and provide examples of each type?
+Answer: Checked exceptions are exceptions that must be caught or declared, such as IOException. Unchecked exceptions are subclasses of RuntimeException, such as NullPointerException, and don't require explicit handling.
+95. What are "annotations" in Java, and how are they used to provide metadata and additional information about code elements?
+Answer: Annotations in Java provide metadata and additional information about code elements such as classes, methods, and fields. They are used for documentation, code generation, and runtime processing.
+96. Explain the principles of the "Liskov Substitution Principle" (LSP) in object-oriented design and how it defines the relationship between a base class and its derived classes?
+Answer: LSP suggests that objects of derived classes should be substitutable for objects of their base classes without affecting program correctness. It defines the behavioral contract between base and derived classes.
+97. What is the "Default Method" feature introduced in Java 8, and how does it enable backward compatibility with existing interfaces when new methods are added?
+Answer: Default methods allow interfaces to provide default implementations for methods, enabling backward compatibility with existing implementations when new methods are added to interfaces.
+98. Explain the role of the java.util.Formatter class in Java and how it's used for formatted output, including specifying format strings and placeholders?
+Answer: The Formatter class in Java is used for formatted output, similar to the printf function in C. It allows you to specify format strings and placeholders to control the formatting of data.
+99. What is the java.nio.file package in Java, and how does it provide improved file and directory handling compared to the legacy java.io.File class?
+Answer: The java.nio.file package provides an improved and more flexible API for file and directory handling compared to the older java.io.File class. It supports advanced features like file attributes and symbolic links.
+100. Describe the principles of the "Dependency Inversion Principle" (DIP) in object-oriented design and how it promotes flexibility and decoupling between high-level and low-level modules?
+Answer: DIP suggests that high-level modules should not depend on low-level modules directly but should depend on abstractions. It promotes decoupling and flexibility by allowing changes in low-level modules without affecting high-level modules.
