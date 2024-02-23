@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Seller Registration</title>
+<style type="text/css">
+	*{
+		margin: 20px;
+	}
+	h2{
+		width: 50%;
+		margin: auto;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.container{
+		width: 50%;
+		margin: auto;
+		height: 350px;
+		border: 2px solid black;
+		background-color: lightgray;
+		padding: 20px;
+	}
+	table{
+		margin: auto;
+	}
+	.btn{
+		width: 100px;
+		padding: 5px;
+	}
+	.btn:hover {
+		background-color: blue;
+		color: white;
+	}
+	span{
+		color: red;
+		font-size: 20px;
+	}
+</style>
+<script type="text/javascript" src="Validation.js"></script>
+</head>
+<body>
+	<h2>Seller Registration</h2>
+	<form action="SellerServlet" method="post" name="SellerForm" onsubmit="return ValidationSeller()">
+		<div class="container">
+			<table>
+				<tr>
+					<td><label>Seller First Name</label></td>
+					<td><input type="text" name="s_name"></td>
+				</tr>
+				<tr>
+					<td><label>Seller Last Name</label></td>
+					<td><input type="text" name="s_lname"></td>
+				</tr>
+				<tr>
+					<td><label>Email</label></td>
+					<td><input type="email" name="email"></td>
+				</tr>
+				<tr>
+					<td><label>Phone No</label></td>
+					<td><input type="number" name="pno">
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit" class="btn"></td>
+					<td>
+					<input type="reset" value="Reset" class="btn">
+					<button class="btn"><a href="Home.html">Home</a></button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><span id="Error">Note:- </span></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>
