@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Detail form</title>
+<style>
+
+body {
+    
+	margin:0;
+	padding:0;
+	display:flex;
+	align-items:center;	
+	justify-content:center;
+	color: black;
+	height:100vh;
+}
+
+
+
+
+label{
+ font-weight: bold;
+}
+.Ele{
+    margin-top: 10px;
+}
+textarea{
+  width:80%;
+}
+h1{
+  color:red;
+  margin-top:10px;
+}
+h3{
+ color:red;
+}
+input[type="submit"]
+{
+  width:150px;
+  height:40px;
+  border-radius: 10px;
+  background-color:#ed3e32 ;
+  font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+	
+	<form action="Product" method="post">
+  <br>
+  <h1>Product Details</h1>
+
+  <label for="product_name" class="Ele">Product Name:</label>
+  <input type="text" class="Ele" name="product_name" required><br> <br>
+
+  <label for="product_id" class="Ele">Product ID:</label>
+  <input type="number" class="Ele" name="product_id" required><br> <br>
+
+  <label for="product_color" class="Ele">Product Color:</label>
+  <input type="text" class="Ele" name="product_color" required><br> <br>
+
+  <label for="product_model" class="Ele">Product Model:</label>
+  <input type="text" class="Ele" name="product_model" required><br><br>
+
+  <label for="product_price" class="Ele">Product Price:</label>
+  <input type="number" class="Ele" name="product_price" required><br><br>
+
+  <input type="submit" class="Ele" value="Submit">
+</form>
+
+	
+</body>
+</html>
