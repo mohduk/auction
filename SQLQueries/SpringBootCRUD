@@ -16,10 +16,6 @@ Step 6: Click on the Generate button. When we click on the Generate button, it w
 Spring Boot CRUD Operations
 Step 7: Extract the Jar file and paste it into the STS workspace.
 
-ADVERTISEMENT
-
-ADVERTISEMENT
-
 Step 8: Import the project folder into STS.
 
 File -> Import -> Existing Maven Projects -> Browse -> Select the folder spring-boot-crud-operation -> Finish
