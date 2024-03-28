@@ -1,0 +1,327 @@
+Spring Boot CRUD Operation Example
+Let's set up a Spring Boot application and perform CRUD operation.
+
+Step 1: Open Spring Initializr http://start.spring.io.
+
+Step 2: Select the Spring Boot version 2.3.0.M1.
+
+Step 2: Provide the Group name. We have provided com.javatpoint.
+
+Step 3: Provide the Artifact Id. We have provided spring-boot-crud-operation.
+
+Step 5: Add the dependencies Spring Web, Spring Data JPA, and H2 Database.
+
+Step 6: Click on the Generate button. When we click on the Generate button, it wraps the specifications in a Jar file and downloads it to the local system.
+
+Spring Boot CRUD Operations
+Step 7: Extract the Jar file and paste it into the STS workspace.
+
+ADVERTISEMENT
+
+ADVERTISEMENT
+
+Step 8: Import the project folder into STS.
+
+File -> Import -> Existing Maven Projects -> Browse -> Select the folder spring-boot-crud-operation -> Finish
+
+It takes some time to import.
+
+Step 9: Create a package with the name com.javatpoint.model in the folder src/main/java.
+
+Step 10: Create a model class in the package com.javatpoint.model. We have created a model class with the name Books. In the Books class, we have done the following:
+
+Define four variable bookid, bookname, author, and
+Generate Getters and Setters.
+Right-click on the file -> Source -> Generate Getters and Setters.
+Mark the class as an Entity by using the annotation @Entity.
+Mark the class as Table name by using the annotation @Table.
+Define each variable as Column by using the annotation @Column.
+Books.java
+
+package com.javatpoint.model;  
+import javax.persistence.Column;  
+import javax.persistence.Entity;  
+import javax.persistence.Id;  
+import javax.persistence.Table;  
+//mark class as an Entity   
+@Entity  
+//defining class name as Table name  
+@Table  
+public class Books  
+{  
+//Defining book id as primary key  
+@Id  
+@Column  
+private int bookid;  
+@Column  
+private String bookname;  
+@Column  
+private String author;  
+@Column  
+private int price;  
+public int getBookid()   
+{  
+return bookid;  
+}  
+public void setBookid(int bookid)   
+{  
+this.bookid = bookid;  
+}  
+public String getBookname()  
+{  
+return bookname;  
+}  
+public void setBookname(String bookname)   
+{  
+this.bookname = bookname;  
+}  
+public String getAuthor()   
+{  
+return author;  
+}  
+public void setAuthor(String author)   
+{  
+this.author = author;  
+}  
+public int getPrice()   
+{  
+return price;  
+}  
+public void setPrice(int price)   
+{  
+this.price = price;  
+}  
+}  
+Step 11: Create a package with the name com.javatpoint.controller in the folder src/main/java.
+
+Step 12: Create a Controller class in the package com.javatpoint.controller. We have created a controller class with the name BooksController. In the BooksController class, we have done the following:
+
+Mark the class as RestController by using the annotation @RestController.
+Autowire the BooksService class by using the annotation @Autowired.
+Define the following methods:
+getAllBooks(): It returns a List of all Books.
+getBooks(): It returns a book detail that we have specified in the path variable. We have passed bookid as an argument by using the annotation @PathVariable. The annotation indicates that a method parameter should be bound to a URI template variable.
+deleteBook(): It deletes a specific book that we have specified in the path variable.
+saveBook(): It saves the book detail. The annotation @RequestBody indicates that a method parameter should be bound to the body of the web request.
+update(): The method updates a record. We must specify the record in the body, which we want to update. To achieve the same, we have used the annotation @RequestBody.
+BooksController.java
+
+package com.javatpoint.controller;  
+import java.util.List;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.web.bind.annotation.DeleteMapping;  
+import org.springframework.web.bind.annotation.GetMapping;  
+import org.springframework.web.bind.annotation.PathVariable;  
+import org.springframework.web.bind.annotation.PostMapping;  
+import org.springframework.web.bind.annotation.PutMapping;  
+import org.springframework.web.bind.annotation.RequestBody;  
+import org.springframework.web.bind.annotation.RestController;  
+import com.javatpoint.model.Books;  
+import com.javatpoint.service.BooksService;  
+//mark class as Controller  
+@RestController  
+public class BooksController   
+{  
+//autowire the BooksService class  
+@Autowired  
+BooksService booksService;  
+//creating a get mapping that retrieves all the books detail from the database   
+@GetMapping("/book")  
+private List<Books> getAllBooks()   
+{  
+return booksService.getAllBooks();  
+}  
+//creating a get mapping that retrieves the detail of a specific book  
+@GetMapping("/book/{bookid}")  
+private Books getBooks(@PathVariable("bookid") int bookid)   
+{  
+return booksService.getBooksById(bookid);  
+}  
+//creating a delete mapping that deletes a specified book  
+@DeleteMapping("/book/{bookid}")  
+private void deleteBook(@PathVariable("bookid") int bookid)   
+{  
+booksService.delete(bookid);  
+}  
+//creating post mapping that post the book detail in the database  
+@PostMapping("/books")  
+private int saveBook(@RequestBody Books books)   
+{  
+booksService.saveOrUpdate(books);  
+return books.getBookid();  
+}  
+//creating put mapping that updates the book detail   
+@PutMapping("/books")  
+private Books update(@RequestBody Books books)   
+{  
+booksService.saveOrUpdate(books);  
+return books;  
+}  
+}  
+Step 13: Create a package with the name com.javatpoint.service in the folder src/main/java.
+
+Step 14: Create a Service class. We have created a service class with the name BooksService in the package com.javatpoint.service.
+
+BooksService.java
+
+package com.javatpoint.service;  
+import java.util.ArrayList;  
+import java.util.List;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.stereotype.Service;  
+import com.javatpoint.model.Books;  
+import com.javatpoint.repository.BooksRepository;  
+//defining the business logic  
+@Service  
+public class BooksService   
+{  
+@Autowired  
+BooksRepository booksRepository;  
+//getting all books record by using the method findaAll() of CrudRepository  
+public List<Books> getAllBooks()   
+{  
+List<Books> books = new ArrayList<Books>();  
+booksRepository.findAll().forEach(books1 -> books.add(books1));  
+return books;  
+}  
+//getting a specific record by using the method findById() of CrudRepository  
+public Books getBooksById(int id)   
+{  
+return booksRepository.findById(id).get();  
+}  
+//saving a specific record by using the method save() of CrudRepository  
+public void saveOrUpdate(Books books)   
+{  
+booksRepository.save(books);  
+}  
+//deleting a specific record by using the method deleteById() of CrudRepository  
+public void delete(int id)   
+{  
+booksRepository.deleteById(id);  
+}  
+//updating a record  
+public void update(Books books, int bookid)   
+{  
+booksRepository.save(books);  
+}  
+}  
+Step 15: Create a package with the name com.javatpoint.repository in the folder src/main/java.
+
+Step 16: Create a Repository interface. We have created a repository interface with the name BooksRepository in the package com.javatpoint.repository. It extends the Crud Repository interface.
+
+BooksRepository.java
+
+package com.javatpoint.repository;  
+import org.springframework.data.repository.CrudRepository;  
+import com.javatpoint.model.Books;  
+//repository that extends CrudRepository  
+public interface BooksRepository extends CrudRepository<Books, Integer>  
+{  
+}  
+Now we will configure the datasource URL, driver class name, username, and password, in the application.properties file.
+
+Step 17: Open the application.properties file and configure the following properties.
+
+application.properties
+
+spring.datasource.url=jdbc:h2:mem:books_data  
+spring.datasource.driverClassName=org.h2.Driver  
+spring.datasource.username=sa  
+spring.datasource.password=  
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect  
+#enabling the H2 console  
+spring.h2.console.enabled=true  
+Note: Do not forget to enable the H2 console.
+After creating all the classes and packages, the project directory looks like the following.
+
+Spring Boot CRUD Operations
+Now we will run the application.
+
+Step 18: Open SpringBootCrudOperationApplication.java file and run it as Java Application.
+
+SpringBootCrudOperationApplication.java
+
+package com.javatpoint;  
+import org.springframework.boot.SpringApplication;  
+import org.springframework.boot.autoconfigure.SpringBootApplication;  
+@SpringBootApplication  
+public class SpringBootCrudOperationApplication   
+{  
+public static void main(String[] args)   
+{  
+SpringApplication.run(SpringBootCrudOperationApplication.class, args);  
+}  
+}  
+Note: In the next steps we will use rest client Postman. So, ensure that the Postman application is already installed in your system.
+Step 19: Open the Postman and do the following:
+
+Select the POST
+Invoke the URL http://localhost:8080/books.
+Select the Body
+Select he Content-Type JSON (application/json).
+Insert the data. We have inserted the following data in the Body:
+{  
+    "bookid": "5433",  
+    "bookname": "Core and Advance Java",  
+    "author": "R. Nageswara Rao",  
+    "price": "800"  
+}   
+Click on the Send
+When the request is successfully executed, it shows the Status:200 OK. It means the record has been successfully inserted in the database.
+
+Similarly, we have inserted the following data.
+
+{  
+    "bookid": "0982",  
+    "bookname": "Programming with Java",  
+    "author": "E. Balagurusamy",  
+    "price": "350"  
+}   
+{  
+    "bookid": "6321",  
+    "bookname": "Data Structures and Algorithms in Java",  
+    "author": "Robert Lafore",  
+    "price": "590"  
+}   
+{  
+    "bookid": "5433",  
+    "bookname": "Effective Java",  
+    "author": "Joshua Bloch",  
+    "price": "670"  
+}  
+Let's access the H2 console to see the data.
+
+Step 20: Open the browser and invoke the URL http://localhost:8080/h2-console. Click on the Connect button, as shown below.
+
+Spring Boot CRUD Operations
+After clicking on the Connect button, we see the Books table in the database, as shown below.
+
+Spring Boot CRUD Operations
+Step 21: Click on the Books table and then click on the Run button. The table shows the data that we have inserted in the body.
+
+Spring Boot CRUD Operations
+Step 22: Open the Postman and send a GET request with the URL http://localhost:8080/books. It returns the data that we have inserted in the database.
+
+Spring Boot CRUD Operations
+Let's send a GET request with the URL http://localhost:8080/book/{bookid}. We have specified the bookid 6830. It returns the detail of the book whose id is 6830.
+
+Spring Boot CRUD Operations
+Similarly, we can also send a DELETE request to delete a record. Suppose we want to delete a book record whose id is 5433.
+
+Select the DELETE method and invoke the URL http://localhost:8080/book/5433. Again, execute the Select query in the H2 console. We see that the book whose id is 5433 has been deleted from the database.
+
+Spring Boot CRUD Operations
+Similarly, we can also update a record by sending a PUT request. Let's update the price of the book whose id is 6321.
+
+Select the PUT
+In the request body, paste the record which you want to update and make the changes. In our case, we want to update the record of the book whose id is 6321. In the following record, we have changed the price of the book.
+{  
+    "bookid": "6321",  
+    "bookname": "Data Structures and Algorithms in Java",  
+    "author": "Robert Lafore",  
+    "price": "500"  
+}  
+Click on the Send
+Now, move to the H2 console and see the changes have reflected or not. We see that the price of the book has been changed, as shown below.
+
+Spring Boot CRUD Operations
